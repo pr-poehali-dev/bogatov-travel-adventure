@@ -319,7 +319,7 @@ export default function Index() {
                 <Icon name="CalendarCheck" size={16} />
                 Забронировать тур
               </button>
-              <a href="tel:+79990000000" className="flex items-center justify-center gap-2 px-8 py-4 text-[12px] tracking-[0.25em] uppercase transition-all duration-300"
+              <a href="tel:+79991046666" className="flex items-center justify-center gap-2 px-8 py-4 text-[12px] tracking-[0.25em] uppercase transition-all duration-300"
                 style={{ border: "1px solid rgba(215,154,87,0.3)", color: "#f3e2bf", borderRadius: 999 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(215,154,87,0.6)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(215,154,87,0.3)"; }}>
@@ -328,7 +328,7 @@ export default function Index() {
               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm" style={{ color: "rgba(233,221,200,0.7)" }}>
-              <span className="flex items-center gap-2"><Icon name="Phone" size={14} style={{ color: "#d79a57" }} />+7 (999) 000-00-00</span>
+              <span className="flex items-center gap-2"><Icon name="Phone" size={14} style={{ color: "#d79a57" }} />+7 (999) 104-66-66</span>
               <span className="flex items-center gap-2"><Icon name="Mail" size={14} style={{ color: "#d79a57" }} />info@bogatovtravel.ru</span>
               <span className="flex items-center gap-2"><Icon name="Clock" size={14} style={{ color: "#d79a57" }} />Ежедневно 9:00–20:00</span>
             </div>
