@@ -59,12 +59,27 @@ export default function Index() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      await fetch("https://functions.poehali.dev/8c77f4d7-342e-4975-b0b2-2548353e47cb", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          tour_format: selectedFormat,
+          date: form.date,
+          guests: form.guests,
+          comment: form.comment,
+        }),
+      });
+    } catch (_) { /* ignore network errors */ }
     setSubmitted(true);
     setTimeout(() => {
       setBookingOpen(false);
       setSubmitted(false);
+      setForm({ name: "", phone: "", date: "", guests: "2", comment: "" });
     }, 2000);
   };
 

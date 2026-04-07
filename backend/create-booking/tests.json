@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "name": "Создание заявки",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Иван Тестов",
+        "phone": "+79991234567",
+        "tour_format": "Драйв-тур",
+        "date": "2026-05-01",
+        "guests": "2",
+        "comment": "Тестовая заявка"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
