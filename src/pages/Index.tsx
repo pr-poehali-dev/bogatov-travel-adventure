@@ -150,7 +150,7 @@ export default function Index() {
           <div className="w-20 h-px mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #d79a57, transparent)" }} />
 
           <p className="text-lg leading-relaxed mb-10 max-w-xl mx-auto" style={{ color: "#e8ddc9", letterSpacing: "0.02em" }}>
-            Премиальные квадротуры и активный отдых.<br />Эмоции, стиль и мощный драйв в каждой поездке.
+            Уже скоро премиальные квадротуры и активный отдых.<br />Эмоции, стиль и мощный драйв в каждой поездке.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
