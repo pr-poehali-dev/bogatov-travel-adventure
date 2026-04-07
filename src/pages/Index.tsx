@@ -50,7 +50,7 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedFormat, setSelectedFormat] = useState("Драйв-тур");
-  const [form, setForm] = useState({ name: "", phone: "", date: "", guests: "2", comment: "" });
+  const [form, setForm] = useState({ name: "", phone: "", email: "", date: "", guests: "2", comment: "" });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -68,6 +68,7 @@ export default function Index() {
         body: JSON.stringify({
           name: form.name,
           phone: form.phone,
+          email: form.email,
           tour_format: selectedFormat,
           date: form.date,
           guests: form.guests,
@@ -79,7 +80,7 @@ export default function Index() {
     setTimeout(() => {
       setBookingOpen(false);
       setSubmitted(false);
-      setForm({ name: "", phone: "", date: "", guests: "2", comment: "" });
+      setForm({ name: "", phone: "", email: "", date: "", guests: "2", comment: "" });
     }, 2000);
   };
 
@@ -442,6 +443,16 @@ export default function Index() {
                         onFocus={e => (e.target.style.borderColor = "#d79a57")}
                         onBlur={e => (e.target.style.borderColor = "rgba(215,154,87,0.2)")} />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-[9px] tracking-[0.3em] uppercase mb-2" style={{ color: "rgba(243,226,191,0.45)" }}>Электронная почта</label>
+                    <input type="email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })}
+                      placeholder="example@mail.ru"
+                      className="w-full px-4 py-3 text-sm rounded-lg border focus:outline-none transition-colors"
+                      style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(215,154,87,0.2)", color: "#f3e2bf" }}
+                      onFocus={e => (e.target.style.borderColor = "#d79a57")}
+                      onBlur={e => (e.target.style.borderColor = "rgba(215,154,87,0.2)")} />
                   </div>
 
                   <div>

@@ -22,6 +22,7 @@ def handler(event: dict, context) -> dict:
 
     name = body.get('name', '')
     phone = body.get('phone', '')
+    email = body.get('email', '')
     tour_format = body.get('tour_format', '')
     date = body.get('date', '')
     guests = body.get('guests', '')
@@ -32,8 +33,8 @@ def handler(event: dict, context) -> dict:
     conn = psycopg2.connect(os.environ['DATABASE_URL'])
     cur = conn.cursor()
     cur.execute(
-        "INSERT INTO t_p4624542_bogatov_travel_adven.bookings (name, phone, tour_format, message) VALUES (%s, %s, %s, %s) RETURNING id",
-        (name, phone, tour_format, message)
+        "INSERT INTO t_p4624542_bogatov_travel_adven.bookings (name, phone, email, tour_format, message) VALUES (%s, %s, %s, %s, %s) RETURNING id",
+        (name, phone, email, tour_format, message)
     )
     booking_id = cur.fetchone()[0]
     conn.commit()
